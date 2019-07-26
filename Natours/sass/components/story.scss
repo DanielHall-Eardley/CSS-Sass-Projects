@@ -1,0 +1,93 @@
+@import './../logic/variables.scss';
+@import './../logic/mixins.scss';
+
+.stories{
+  padding: 5rem 0;
+  position: relative;
+  .story{
+    transform: skewX(-12deg);
+    width: 75%;
+    margin: 5rem auto;
+    box-shadow: 0 3rem 6rem rgba($black, .2);
+    background-color: white;
+    border-radius: .5rem;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+
+    @include responsive(phone){
+      width: 100%;
+      margin: 0;
+      padding: 2rem;
+      padding-left: 5rem;
+      transform: skewX(0deg)
+    }
+
+    .picture{
+      height: 15rem;
+      width: 15rem;
+      float: left;
+      overflow: hidden;
+      transform: translateX(-3rem) skewX(12deg);
+      position: relative;
+      border-radius: 50%;
+
+      @include responsive(phone){
+        transform: translateX(-3rem) skewX(0deg);
+      }
+
+      @supports (clip-path: circle (50% at 50% 50%)) or (-webkit-clip-path: circle (50% at 50% 50%)){
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        border-radius: none;
+      }
+
+      img{
+        height: 100%;
+        transform: translateX(-4rem) scale(1.4);
+        backface-visibility: hidden;
+        transition: transform .4s;
+      }
+      figcaption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 25%);
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0;
+        transition: all .4s;
+        backface-visibility: hidden;
+      }
+    }
+    .text{
+      transform: skewX(12deg);
+
+      @include responsive(phone){
+        transform: skewX(0deg);
+      }
+    }
+    &:hover figcaption{
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+    &:hover img{
+      transform: translateX(-4rem) scale(1);
+      filter: blur(4px) brightness(70%);
+    }
+  }
+  .video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+    opacity: .4;
+    video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

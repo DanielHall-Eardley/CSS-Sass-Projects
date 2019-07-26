@@ -1,0 +1,102 @@
+@import './../logic/variables.scss';
+@import './../logic/mixins.scss';
+@import './sass/base/utilities.scss';
+
+.section-about{
+  background: $light-grey1;
+  margin-top: -20vh;
+  padding: 25vh 0;
+  @include responsive(tab-port){
+    padding-bottom: 35vh;
+  }
+
+  @include responsive(phone){
+    padding-bottom: 25vh;
+  }
+}
+
+.heading-secondary{
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  color: $dark-green;
+  transition: all .2s;
+  margin-bottom: 3rem;
+  &:hover{
+    transform: skewY(2deg) skewX(10deg) scale(1.2);
+    text-shadow: .3rem 1rem 2rem rgba(0, 0, 0, .2)
+  }
+
+  @include responsive(tab-port){
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+
+  @include responsive(phone){
+    font-size: 2.3rem;
+  }
+}
+
+.heading-paragraph{
+  font-size: 1.6rem;
+  font-weight: 700;
+  @include add-margin-bottom(2rem);
+}
+
+.paragraph{
+  font-size: 1.6rem;
+
+  &:not(:last-child){
+    margin-bottom: 2rem;
+  }
+}
+
+.photo-composition-container{
+  position: relative;
+  .photo{
+  width: 55%;
+  border-radius: 2px;
+  box-shadow: 0px 1rem 3rem rgba(0, 0, 0, .2);
+  position: absolute;
+  transition: all .2s;
+  outline-offset: 2rem;
+    @include responsive(tab-port){
+      position: static;
+      float: left;
+      width: 32%;
+      border-radius: 0;
+      object-fit: cover;
+      &:not(:last-child){
+        margin-right: 2%;
+      }
+    }
+
+    @include responsive(phone){
+      width: 100%;
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+    &:hover{
+      transform: scale(1.1);
+      box-shadow: 0px 3rem 3rem rgba(0, 0, 0, .6);
+      z-index: 2;
+      outline: 1rem solid $dark-green;
+    }
+  }
+  .photo-1{
+    top: 4rem;
+  }
+  .photo-2{
+    top: 6rem;
+    right: 0px;
+  }
+  .photo-3{
+    top: 15rem;
+    left: 25%;
+  }
+  &:hover .photo:not(:hover){
+    transform: scale(0.9);
+    box-shadow: 0px .5rem 1rem rgba(0, 0, 0, .1);
+  }
+}

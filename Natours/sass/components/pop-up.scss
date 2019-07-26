@@ -1,0 +1,120 @@
+@import '../logic/variables.scss';
+
+.pop-up-container{
+  background-color: rgba($black, .8);
+  padding: 5rem;
+  z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)){
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($black, .2);
+  }
+
+  @include responsive(tab-port){
+    padding: 2rem;
+    overflow: scroll;
+  }
+
+  &:target{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target .pop-up-content{
+    transform: scale(1);
+  }
+
+  & .pop-up-close{
+    &:link, &:visited{
+      color: $dark-grey;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    &:hover{
+      color: $light-green;
+    }
+  }
+
+  & .pop-up-content{
+    display: table;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 1rem 2rem rgba($black, .2);
+    border-radius: 4px;
+    transform: scale(.4);
+    transition: all .4s .3s;
+    @include clearfix;
+    @include responsive(tab-port){
+      display: block;
+    }
+  }
+
+  & .pop-up-left{
+      width: 35%;
+      display: table-cell;
+      vertical-align: middle;
+      @include responsive(tab-port){
+        display: flex;
+        width: 95%;
+        padding: 2rem;
+      }
+
+      @include responsive(phone){
+        display: block;
+      }
+    & img{
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      @include responsive(tab-port){
+        width: 49%;
+        &:not(:last-child){
+          margin-right: 2%;
+        }
+      }
+
+      @include responsive(phone){
+        width: 100%;
+        &:not(:last-child){
+          margin-bottom: 2%;
+        }
+      }
+    }
+  }
+
+  & .pop-up-right{
+    display: table-cell;
+    vertical-align: middle;
+    width: 65%;
+    padding: 0 5rem;
+    @include responsive(tab-port){
+      display: block;
+      width: 100%;
+      padding: 2rem;
+    }
+    & .pop-up-text{
+      font-size: $default-font-size;
+      column-count: 2;
+      column-gap: 5rem;
+      column-rule: solid 1px $light-grey1;
+      hyphens: auto;
+      @include responsive(tab-port){
+        column-count: 1;
+      }
+    }
+  }
+}

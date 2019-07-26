@@ -1,0 +1,175 @@
+@import './../logic/variables.scss';
+@import './../logic/mixins.scss';
+
+.popular{
+  background-color: $light-grey1;
+  margin-top: -15vh;
+  padding: 15rem 0 5rem 0;
+  //front card
+  .card{
+    perspective: 150rem;
+    position: relative;
+    .card-side{
+      transition: transform 1s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      height: 48rem;
+      width: 100%;
+      border-radius: .5rem;
+      box-shadow: 0 1rem 1.5rem rgba($black, .15)
+    }
+    .front{
+      background-color: white;
+    }
+    .back{
+      transform: rotateY(180deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &:hover .front{
+      transform: rotateY(-180deg);
+    }
+    &:hover .back{
+      transform: rotateY(0deg);
+    }
+    .card-1-back{
+      background-image: linear-gradient(to right, $gold, $orange)
+    }
+    .card-2-back{
+      background-image: linear-gradient(to right, $light-green, $dark-green)
+    }
+    .card-3-back{
+      background-image: linear-gradient(to right, $blue, $purple)
+    }
+  }
+  //card picture
+  .picture{
+    background-size: cover;
+    height: 40%;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+  }
+  .pic-1{
+    background-image: linear-gradient(to right, $gold, $orange), url('../img/nat-5.jpg');
+  }
+  .pic-2{
+    background-image: linear-gradient(to right, $light-green, $dark-green), url('../img/nat-6.jpg');
+  }
+  .pic-3{
+    background-image: linear-gradient(to right, $blue, $purple), url('../img/nat-7.jpg');
+  }
+  //card heading
+  .card-heading{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: absolute;
+    top: 11rem;
+    right: 0;
+    color: white;
+    width: 50%;
+    span{
+      padding: 1rem;
+      text-align: right;
+      -webkit-box-decoration-break: clone;
+    }
+    .h-1{
+      background-image: linear-gradient(to right, rgba($gold, 0.8), rgba($orange, 0.8));
+    }
+    .h-2{
+      background-image: linear-gradient(to right, rgba($light-green, 0.8), rgba($dark-green, 0.8));
+    }
+    .h-3{
+      background-image: linear-gradient(to right, rgba($blue, 0.8), rgba($purple, 0.8));
+    }
+  }
+  //card details
+  .card-details{
+    ul{
+      list-style: none;
+      width: 80%;
+      margin: 0px auto;
+      li{
+        padding: 1.5rem;
+        font-size: 1.8rem;
+        text-align: center;
+        &:not(:last-child){
+          border-bottom: solid 0.4px rgba($black, .4)
+        }
+      }
+    }
+  }
+  //back card
+  .card-cta{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    color: white;
+    .card-only{
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    .card-price{
+      font-size: 6rem;
+      font-weight: 100;
+    }
+  }
+    @media only screen and (max-width: 56.25em),
+    only screen and (hover: none){
+    .card{
+      height: auto;
+
+      .card-side{
+        transition: transform 1s ease;
+        position: relative;
+        width: 100%;
+        border-radius: .5rem;
+        box-shadow: 0 1rem 1.5rem rgba($black, .15)
+      }
+
+      .front{
+        background-color: white;
+        border-radius: 0;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+      }
+
+      .back{
+        transform: rotateY(0deg);
+        height: 20rem;
+        border-radius: 0;
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+      }
+
+      &:hover .front{
+        transform: rotateY(0deg);
+      }
+
+      &:hover .back{
+        transform: rotateY(0deg);
+      }
+
+      .card-cta{
+        position: relative;
+        text-align: center;
+        width: 100%;
+        color: white;
+        .card-only{
+          font-size: 2rem;
+          text-transform: uppercase;
+        }
+        .card-price{
+          font-size: 4rem;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}

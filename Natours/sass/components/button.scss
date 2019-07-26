@@ -1,0 +1,92 @@
+@import '../logic/variables.scss';
+
+.btn, .btn:link, .btn:visited{
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  margin-top: 4rem;
+  border-radius: 5rem;
+  transition: all .3s;
+  position: relative;
+  font-size: $default-font-size;
+  @include responsive(tab-port){
+    margin-top: 2rem;
+  }
+}
+
+.btn:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .3)
+}
+
+.btn:active{
+  transform: translateY(-2px);
+  box-shadow: 0 .3rem .8rem rgba(0, 0, 0, .5)
+}
+
+.btn-white{
+  background-color: #fff;
+  color: #777;
+}
+
+.btn-green{
+  background-color: $light-green;
+  color: white;
+}
+
+.btn::after{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s
+}
+
+.btn-white::after{
+  background: #fff;
+}
+
+.btn-green::after{
+  background: $light-green
+}
+
+.btn:hover::after{
+  transform: scaleX(1.3) scale(1.5);
+  opacity: 0;
+}
+
+.button-animation{
+  animation: moveBottom .4s ease-in .5s;
+  animation-fill-mode: backwards;
+}
+
+.btn-text{
+  &:link,
+  &:visited{
+    font-size: $default-font-size;
+    color: $light-green;
+    text-decoration: none;
+    border-bottom: solid 1px $light-green;
+    padding: 3px;
+    transition: all .2s;
+    background-color: $light-grey1;
+  }
+
+  &:hover{
+    background: $light-green;
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, .5)
+  }
+
+  &:active{
+    transform: translateY(0px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .5)
+  }
+}

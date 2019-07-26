@@ -1,0 +1,47 @@
+@import './../logic/variables.scss';
+@import '../logic/mixins.scss';
+
+.feature{
+  padding: 20rem 0;
+  background-image: linear-gradient(to right,
+    rgba(126, 213, 111, 0.8),
+    rgba(40, 180, 131, 0.8)),
+    url('../img/nat-4.jpg');
+  background-size: cover;
+  transform: skewY(-5deg);
+  margin-top: -25vh;
+  @include responsive(tab-port){
+    padding: 10rem 0;
+  }
+
+  @include responsive(phone){
+    padding: 5rem 0;
+  }
+  & > *{
+    transform: skewY(5deg);
+  }
+  .feature-box{
+    height: 100%;
+    background-color: rgba($light-grey1, 0.8);
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    box-shadow: 0 1.5rem 3rem rgba($black, 0.2);
+    transition: transform .3s;
+    &:hover{
+      transform: translateY(-2rem) scale(1.2);
+    }
+
+    @include responsive(tab-port){
+      font-size: 2.5rem;
+    }
+  }
+
+  [class^='icon-basic']{
+    font-size: 6rem;
+    background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8));
+    -webkit-background-clip: text;
+    color: transparentize(white, 1);
+  }
+}

@@ -1,0 +1,14 @@
+@import '../logic/mixins.scss';
+
+.logo{
+  height: 3.5rem;
+  @include responsive(tab-port){
+    height: 2.8rem;
+  }
+}
+
+.logo-container{
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}

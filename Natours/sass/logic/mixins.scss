@@ -1,0 +1,48 @@
+@mixin clearfix (){
+  &:after{
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+@mixin add-margin-bottom ($spacing){
+  margin-bottom: $spacing;
+}
+
+//media queries
+/*
+0 - 600 = phone
+600 - 900 = tablet portrait
+900 - 1200 = tablet landscape
+1200 - 1800 = default desktop
+1800+ = tv
+
+1em = 16px;
+*/
+
+@mixin responsive($breakpoint){
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { //600
+      @content;
+    };
+  }
+
+  @if $breakpoint == tab-port{
+    @media only screen and (max-width: 56.25em) { //900
+      @content;
+    };
+  }
+
+  @if $breakpoint == tab-land { //1200
+    @media only screen and (max-width: 75em) {
+      @content;
+    };
+  }
+
+  @if $breakpoint == tv {
+    @media only screen and (min-width: 112.5em) { //1800+
+      @content;
+    }
+  }
+}
