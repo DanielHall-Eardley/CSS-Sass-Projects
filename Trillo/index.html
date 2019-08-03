@@ -3,14 +3,205 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-        
+
         <title>trillo &mdash; Your all-in-one booking app</title>
     </head>
     <body>
-        
+      <div class="container">
+        <header>
+          <img src="img/logo.png" class='logo' alt="logo">
+          <form action="#" class='search'>
+            <input class='search-input' type="text" placeholder='Search places'>
+            <button class='search-submit' type='submit'>
+              <svg class='search-icon'>
+                <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+              </svg>
+            </button>
+          </form>
+          <nav class='top-nav'>
+            <div class="nav-box">
+              <svg class="bookmark-icon">
+                <use xlink:href='img/sprite.svg#icon-bookmark'></use>
+              </svg>
+              <span class="notification">3</span>
+            </div>
+            <div class="nav-box">
+              <svg class="chat-icon">
+                <use xlink:href='img/sprite.svg#icon-chat'></use>
+              </svg>
+              <span class="notification">17</span>
+            </div>
+            <div class="user">
+              <img src="img/user.jpg" class='user-photo' alt="profile pic">
+              <span class='user-name'>Jonas</span>
+            </div>
+          </nav>
+        </header>
+
+        <div class="content">
+          <nav class="side-nav">
+            <ul class='side-nav-list'>
+              <li>
+                <a href="#" class='nav-item'>
+                  <svg class="side-nav-icon">
+                    <use xlink:href='img/sprite.svg#icon-home'></use>
+                  </svg>
+                  <span>Hotel</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class='nav-item'>
+                  <svg class="side-nav-icon">
+                    <use xlink:href='img/sprite.svg#icon-aircraft-take-off'></use>
+                  </svg>
+                  <span>Flight</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class='nav-item'>
+                  <svg class="side-nav-icon">
+                    <use xlink:href='img/sprite.svg#icon-key'></use>
+                  </svg>
+                  <span>Car rental</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class='nav-item'>
+                  <svg class="side-nav-icon">
+                    <use xlink:href='img/sprite.svg#icon-map'></use>
+                  </svg>
+                  <span>Tours</span>
+                </a>
+              </li>
+            </ul>
+            <div class="legal">Built by Daniel Hall-Eardley, designed Jonas Schmedtmann &copy; All Rights Reserved.</div>
+          </nav>
+
+          <main class='hotel-view'>
+            <div class="gallery">
+              <figure class='gallery-item'>
+                <img class='gallery-photo' src="img/hotel-1.jpg" alt="Hotel photo">
+              </figure>
+              <figure class='gallery-item'>
+                <img class='gallery-photo' src="img/hotel-2.jpg" alt="Hotel photo">
+              </figure>
+              <figure class='gallery-item'>
+                <img class='gallery-photo' src="img/hotel-3.jpg" alt="Hotel photo">
+              </figure>
+            </div>
+
+            <div class="overview">
+              <h1 class="overview-heading">Hotel La Daniel</h1>
+              <div class="overview-stars">
+                <svg class="overview-star-icon">
+                  <use xlink:href='img/sprite.svg#icon-star'></use>
+                </svg>
+                <svg class="overview-star-icon">
+                  <use xlink:href='img/sprite.svg#icon-star'></use>
+                </svg>
+                <svg class="overview-star-icon">
+                  <use xlink:href='img/sprite.svg#icon-star'></use>
+                </svg>
+                <svg class="overview-star-icon">
+                  <use xlink:href='img/sprite.svg#icon-star'></use>
+                </svg>
+                <svg class="overview-star-icon">
+                  <use xlink:href='img/sprite.svg#icon-star'></use>
+                </svg>
+              </div>
+              <div class="overview-location">
+                <svg class="overview-location-icon">
+                  <use xlink:href='img/sprite.svg#icon-location-pin'></use>
+                </svg>
+                <button class="btn-inline">Toronto, Canada</button>
+              </div>
+              <div class="overview-rating">
+                <div class="overview-rating-average">8.6</div>
+                <div class="overview-rating-count">346 reviews</div>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="description">
+                <p class='paragraph'>
+                  I'd like to order one large phone with extra phones please. cell phone, no no no rotary... and payphone on half.
+                </p>
+                <p class='paragraph'>
+                  This is because you give Morty Smith bad grades, bitch!
+                </p>
+                <ul class="list">
+                  <li class="list-item">Close to the Beach</li>
+                  <li class="list-item">Breakfast included</li>
+                  <li class="list-item">Free airport shuttle</li>
+                  <li class="list-item">Free wifi</li>
+                  <li class="list-item">Air condition and heating</li>
+                  <li class="list-item">Pets allowed</li>
+                  <li class="list-item">Happy endings</li>
+                </ul>
+                <div class="recommend">
+                  <p class="recommend-count">
+                    Jesus and three other deities recommend this hotel
+                  </p>
+                  <div class="recommend-friends">
+                    <img src="img/user-3.jpg" alt="Friend photo" class="recommend-photo">
+                    <img src="img/user-4.jpg" alt="Friend photo" class="recommend-photo">
+                    <img src="img/user-5.jpg" alt="Friend photo" class="recommend-photo">
+                    <img src="img/user-6.jpg" alt="Friend photo" class="recommend-photo">
+                  </div>
+                </div>
+              </div>
+
+              <div class="user-reviews">
+                <figure class="review">
+                  <blockquote class="review-text">
+                    You created a day care for my dad? Jesus Christ!
+                    Did the boomy-booms blow up all your wordy-word books?
+                  </blockquote>
+                  <figcaption class="review-user">
+                    <img src="img/user-1.jpg" alt="Profile picture" class='review-photo'>
+                    <div class="review-user-box">
+                      <p class="review-user-name">Nick Smith</p>
+                      <p class="review-user-date">Feb 23rd, 2019</p>
+                    </div>
+                    <div class="review-rating">7.8</div>
+                  </figcaption>
+                </figure>
+                <figure class="review">
+                  <blockquote class="review-text">
+                    You created a day care for my dad? Jesus Christ!
+                    Did the boomy-booms blow up all your wordy-word books?
+                  </blockquote>
+                  <figcaption class="review-user">
+                    <img src="img/user-2.jpg" alt="Profile picture" class='review-photo'>
+                    <div class="review-user-box">
+                      <p class="review-user-name">Nick Smith</p>
+                      <p class="review-user-date">Feb 23rd, 2019</p>
+                    </div>
+                    <div class="review-rating">7.8</div>
+                  </figcaption>
+                </figure>
+                <button class="btn-inline phone">Show All</button>
+              </div>
+            </div>
+            <div class="booking">
+              <h2 class="booking-heading">
+                Good news! We have 4 rooms available for your selected dates
+              </h2>
+              <button class="booking-btn">
+                <span class="btn-visible">
+                  Book Now
+                </span>
+                <span class="btn-invisible">
+                  Only 4 rooms left
+                </span>
+              </button>
+            </div>
+          </main>
+        </div>
+      </div>
     </body>
 </html>

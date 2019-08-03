@@ -1,0 +1,33 @@
+.footer{
+  background-color: $color-secondary;
+  grid-column: fr-left-start / fr-right-end;
+  padding: 8rem;
+  &-nav{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    a{
+      &:link, &:visited{
+        padding: 1rem 0;
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        transition: all .2s;
+
+        &:hover, &:active{
+          background-color: rgba(white, 0.05);
+        }
+      }
+    }
+  }
+  .legal{
+    color: $color-grey-light-2;
+    margin: 0 auto;
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    width: 70%
+  }
+}
